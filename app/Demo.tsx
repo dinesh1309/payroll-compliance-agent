@@ -9,6 +9,7 @@ import { usd } from "@/src/util";
 import { Pill } from "./components/Pill";
 import { Donut } from "./components/Donut";
 import { EditableGrid } from "./components/EditableGrid";
+import { track } from "./components/PostHogProvider";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -252,6 +253,7 @@ export function Demo({ initialBatch }: { initialBatch: Batch }) {
   const states = seededStates();
 
   async function run() {
+    track("ran_review", { records: batch.records.length });
     setStatus("running");
     setReview(null);
     setTrace([]);
@@ -275,6 +277,10 @@ export function Demo({ initialBatch }: { initialBatch: Batch }) {
       }
       setReview(data.review);
       setStatus("done");
+      track("review_completed", {
+        verdict: data.review.verdict,
+        exact_owed: data.review.totals.exact_owed,
+      });
     } catch (e) {
       setError((e as Error).message);
       setStatus("idle");
@@ -282,6 +288,7 @@ export function Demo({ initialBatch }: { initialBatch: Batch }) {
   }
 
   function onEdit(index: number, patch: Partial<BatchRecord>) {
+    track("edited_batch", { field: Object.keys(patch)[0] });
     setBatch((prev) => ({
       ...prev,
       records: prev.records.map((r, i) => (i === index ? { ...r, ...patch } : r)),
