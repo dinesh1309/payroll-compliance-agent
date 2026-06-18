@@ -1,0 +1,11 @@
+{
+  "FEDERAL": { "min_wage": 7.25, "cash_floor": 2.13, "max_tip_credit": 5.12, "tip_credit_allowed": true },
+  "TX": { "min_wage": 7.25, "cash_floor": 2.13, "max_tip_credit": 5.12, "tip_credit_allowed": true },
+  "FL": { "min_wage": 13.00, "cash_floor": 9.98, "max_tip_credit": 3.02, "tip_credit_allowed": true },
+  "CA": { "min_wage": 16.00, "cash_floor": 16.00, "max_tip_credit": 0, "tip_credit_allowed": false },
+  "OR": { "min_wage": 14.70, "cash_floor": 14.70, "max_tip_credit": 0, "tip_credit_allowed": false },
+  "WA": { "min_wage": 16.28, "cash_floor": 16.28, "max_tip_credit": 0, "tip_credit_allowed": false },
+  "MN": { "min_wage": 11.13, "cash_floor": 11.13, "max_tip_credit": 0, "tip_credit_allowed": false },
+  "AK": { "min_wage": 11.91, "cash_floor": 11.91, "max_tip_credit": 0, "tip_credit_allowed": false },
+  "MT": { "min_wage": 10.55, "cash_floor": 10.55, "max_tip_credit": 0, "tip_credit_allowed": false }
+}
