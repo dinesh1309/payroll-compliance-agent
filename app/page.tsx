@@ -133,6 +133,14 @@ export default function Page() {
             </a>
             <a
               className="font-medium text-brand-blue hover:underline"
+              href="https://www.linkedin.com/in/pvdinesh/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn →
+            </a>
+            <a
+              className="font-medium text-brand-blue hover:underline"
               href="https://github.com/dinesh1309/payroll-compliance-agent"
               target="_blank"
               rel="noopener noreferrer"
